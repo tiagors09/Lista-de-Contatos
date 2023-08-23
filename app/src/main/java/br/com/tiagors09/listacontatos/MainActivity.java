@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         editTextNome = findViewById(R.id.editTextNome);
         editTextTelefone = findViewById(R.id.editTextTelefone);
         editTextEndereco = findViewById(R.id.editTextEndereco);
+        listViewContatos = (ListView) findViewById(R.id.listViewContatos);
 
         listaContatos = new ArrayList<Contato>();
 
@@ -47,13 +48,23 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 listViewContatos.setItemChecked(position, false);
 
-                posSelection = -1;
+                if (position == posSelection) {
+                    posSelection = -1;
+                } else  {
+                    posSelection = position;
+                }
             }
         });
     }
 
     public void adicionarContato(View v) {
+        Contato c = new Contato(
+                editTextNome.getText().toString(),
+                editTextTelefone.getText().toString(),
+                editTextEndereco.getText().toString()
+        );
 
+        listaContatos.add(c);
     }
 
     public void editarContato(View v) {
