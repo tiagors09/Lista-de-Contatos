@@ -8,8 +8,8 @@ public class Contato {
     String telefone;
     String endereco;
 
-    public Contato(int id, String nome, String telefone, String endereco) {
-        this.id = id;
+    public Contato(String nome, String telefone, String endereco) {
+        this.id = contadosIds;
         this.nome = nome;
         this.telefone = telefone;
         this.endereco = endereco;
