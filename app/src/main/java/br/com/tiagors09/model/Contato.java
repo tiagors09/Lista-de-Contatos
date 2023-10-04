@@ -1,12 +1,11 @@
 package br.com.tiagors09.model;
 
 public class Contato {
-    static int contadosIds = 0;
-
-    int id;
-    String nome;
-    String telefone;
-    String endereco;
+    private static int contadosIds = 0;
+    private int id;
+    private String nome;
+    private String telefone;
+    private String endereco;
 
     public Contato(String nome, String telefone, String endereco) {
         this.id = contadosIds;
